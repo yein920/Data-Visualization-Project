@@ -28,12 +28,12 @@ import vo.Music;
 //9. 검색기능(헤더-메인화면)-임상우
 //최신음악(메인화면)
 
-@WebServlet("*.do")
-@SuppressWarnings("serial")
+@WebServlet("*.do")	//.do로 끝나는 모든 URL에 대해 적용
+@SuppressWarnings("serial")	//컴파일러의 경고를 제외하는 옵션 //serial은 직렬화 가능 클래스에 대한 누락된 serialVersionUID 필드와 관련된 경고
 public class DispatcherSerlvet extends HttpServlet{
 
-	@SuppressWarnings("deprecation")
-	@Override
+	@SuppressWarnings("deprecation")	//권장되지 않는 기능과 관련된 경고를 제외하는 옵션 //어노테이션을 사용하여 컴파일러는 이 경고를 해당 메소드에 대해 로컬에서 무시. 이러한 경우 동일한 컴파일 단위 또는 동일한 프로젝트의 다른 위치에 경고를 보관할 수 있다.
+	@Override		
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		
