@@ -25,8 +25,7 @@ public class LogInController implements Controller {
 			Member loginInfo = (Member)model.get("loginInfo");
 			
 			Member member = memberDao.exist(loginInfo.getUser_email(), 
-											loginInfo.getUser_pw()
-											);
+							loginInfo.getUser_pw());
 			if(member != null) {
 				HttpSession session = (HttpSession)model.get("session");
 				session.setAttribute("member", member);
